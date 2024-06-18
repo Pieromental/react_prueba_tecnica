@@ -1,0 +1,23 @@
+.search-bar {
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: width 0.3s ease; /* Añade una transición suave al cambiar el tamaño */
+  }
+  
+  /* Media query para pantallas medianas */
+  @media (max-width: 1024px) {
+    .search-bar {
+      width: 50%; /* Ajusta el ancho al 50% en pantallas medianas */
+    }
+  }
+  
+  /* Media query para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .search-bar {
+      width: 100%; /* Ajusta el ancho al 100% en pantallas pequeñas */
+    }
+  }

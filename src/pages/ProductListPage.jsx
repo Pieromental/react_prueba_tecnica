@@ -1,11 +1,16 @@
+import { useState } from "react";
 import useProducts from "../hooks/useProducts";
-import Header from "../components/Header";
+
+import SearchBar from "../components/SearchBar";
 import ProductList from "../components/ProductList";
+import useFilteredProducts from "../hooks/useFilteredProducts";
 import "./ProductListPage.css";
 
 const ProductListPage = () => {
   const { products, loading, error } = useProducts();
-  const cartCount = 1; // Cambia esto según tu lógica de estado
+  const { searchTerm, setSearchTerm, filteredProducts } = useFilteredProducts(products);
+
+
 
   if (loading) {
     return <p>Cargando productos...</p>;
@@ -17,9 +22,12 @@ const ProductListPage = () => {
 
   return (
     <>
-      <Header cartCount={cartCount} />
+   
       <main className="mainApp">
-        <ProductList products={products} />
+        <div className="search-container">
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        </div>
+        <ProductList products={filteredProducts} />
       </main>
     </>
   );
