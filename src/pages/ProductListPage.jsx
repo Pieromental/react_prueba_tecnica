@@ -1,5 +1,7 @@
 import useProducts from "../hooks/useProducts";
 import Header from "../components/Header";
+import ProductList from "../components/ProductList";
+import "./ProductListPage.css";
 
 const ProductListPage = () => {
   const { products, loading, error } = useProducts();
@@ -16,7 +18,9 @@ const ProductListPage = () => {
   return (
     <>
       <Header cartCount={cartCount} />
-     
+      <main className="mainApp">
+        <ProductList products={products} />
+      </main>
     </>
   );
 };
