@@ -51,31 +51,55 @@ Sigue los siguientes pasos para instalar y ejecutar el proyecto localmente:
 
 ## Estructura del Proyecto:
 
+    ├── node_modules
     ├── public
-    │   ├── index.html
-    │   └── ...
+    │   └── index.html
     ├── src
-    │   ├── assets
-    │   │   └── icons
-    │   ├── components
-    │   │   └── Header.jsx
-    │   ├── context
-    │   │   └── cart.jsx
-    │   ├── hooks
-    │   │   └── useProductDetails.js
-    │   ├── pages
-    │   │   ├── ProductDetailsPage.jsx
-    │   │   └── ProductListPage.jsx
     │   ├── __tests__
     │   │   └── example.test.js
+    │   ├── assets
+    │   │   └── icons
+    │   │       ├── cart_icon.png
+    │   │       ├── email_icon.png
+    │   │       └── react.svg
+    │   ├── components
+    │   │   ├── Header.css
+    │   │   ├── Header.jsx
+    │   │   ├── ProductList.css
+    │   │   ├── ProductList.jsx
+    │   │   ├── SearchBar.css
+    │   │   ├── SearchBar.jsx
+    │   │   ├── Spinner.css
+    │   │   └── Spinner.jsx
+    │   ├── context
+    │   │   ├── breadCrumb.jsx
+    │   │   └── cart.jsx
+    │   ├── hooks
+    │   │   ├── useBreadCrumb.js
+    │   │   ├── useCart.js
+    │   │   ├── useFilteredProducts.js
+    │   │   ├── useProductDetails.js
+    │   │   └── useProducts.js
+    │   ├── pages
+    │   │   ├── ProductDetailsPage.css
+    │   │   ├── ProductDetailsPage.jsx
+    │   │   ├── ProductListPage.css
+    │   │   └── ProductListPage.jsx
+    │   ├── App.css
     │   ├── App.jsx
     │   ├── index.css
-    │   └── main.jsx
+    │   ├── main.jsx
     ├── .babelrc
-    ├── .eslintrc.js
+    ├── .eslintrc.cjs
     ├── jest.config.cjs
     ├── package.json
-    └── vite.config.js
+    ├── vite.config.js
+    ├── index.html
+    ├── setupTests.js
+    ├── package-lock.json
+    ├── README.md
+    └── .gitignore
+
 
 ## Notas Adicionales:
 
