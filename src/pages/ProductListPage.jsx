@@ -3,14 +3,14 @@ import useProducts from "../hooks/useProducts";
 import SearchBar from "../components/SearchBar";
 import ProductList from "../components/ProductList";
 import Spinner from "../components/Spinner";
-import { useBreadCrumb } from "../hooks/useBreadCrumb";
+
 import useFilteredProducts from "../hooks/useFilteredProducts";
 import "./ProductListPage.css";
 
 const ProductListPage = () => {
   const { products, loading, error } = useProducts();
   const { searchTerm, setSearchTerm, filteredProducts } = useFilteredProducts(products);
-  const { updateBreadCrumb } = useBreadCrumb();
+
 
 
   if (loading) {
