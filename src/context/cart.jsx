@@ -47,24 +47,13 @@ export const CartProvider = ({ children }) => {
       }
       const result = await response.json();
 
-      setCart((prevState) => {
-        const updatedCart = [...prevState];
-        const productIndex = updatedCart.findIndex(item => item.id === product.id && item.colorCode === product.colorCode && item.storageCode === product.storageCode);
-        
-        if (productIndex !== -1) {
-          // Si el producto ya está en el carrito, actualiza su cantidad
-          updatedCart[productIndex].count = result.count;
-        } else {
-          // Si el producto no está en el carrito, añádelo
-          updatedCart.push({
-            ...product,
-            count: result.count,
-          });
-        }
-        return updatedCart;
-      });
+      setCart((prevState) => [
+        ...prevState,
+        { ...product, count: result.count }
+      ]);
 
       setLastProduct(product);
+      alert("Producto añadido al carrito");
     } catch (error) {
       console.error("Error adding to cart:", error);
     }

@@ -1,3 +1,4 @@
+/* Estilos generales */
 .header {
   display: flex;
   flex-direction: column;
@@ -13,11 +14,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .header-bottom {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+  width: 100%;
 }
 
 .header-center,
@@ -26,18 +29,16 @@
   align-items: center;
 }
 
-
 .header-right .icon {
-  width: 24px; 
-  height: 24px; 
+  width: 24px;
+  height: 24px;
   margin-right: 10px;
   cursor: pointer;
 }
 
-
 .header-center h1 {
   color: #ffc107;
-  font-family: 'Arial', sans-serif; 
+  font-family: 'Arial', sans-serif;
   font-size: 24px;
   font-weight: bold;
   margin: 0;
@@ -50,16 +51,16 @@
 }
 
 .cart-icon {
-  width: 32px !important; 
-  height: 32px !important; 
+  width: 32px !important;
+  height: 32px !important;
 }
 
 .cart-count {
   position: absolute;
   top: -10px;
   right: -10px;
-  background-color: #ffc107; 
-  color: #003366; 
+  background-color: #ffc107;
+  color: #003366;
   border-radius: 50%;
   padding: 5px 10px;
   font-size: 14px;
@@ -67,7 +68,7 @@
 }
 
 .order-button {
-  background-color: #003366; 
+  background-color: #003366;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -77,21 +78,47 @@
 }
 
 .order-button:hover {
-  background-color: #002244; 
+  background-color: #002244;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+}
+
+.breadcrumbs a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs span {
+  margin: 0 5px;
 }
 
 /* Media queries para dispositivos móviles */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: flex-start;
     padding: 10px;
+  }
+
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .header-left,
   .header-center,
   .header-right {
     margin-bottom: 10px;
+    width: 100%;
+    justify-content: center;
   }
 
   .header-center h1 {
@@ -105,8 +132,8 @@
 
   .header-left .icon,
   .header-right .icon {
-    width: 20px; 
-    height: 20px; 
+    width: 20px;
+    height: 20px;
   }
 
   .cart-count {
@@ -115,24 +142,51 @@
     padding: 4px 8px;
     font-size: 12px;
   }
- 
-  
+
   .breadcrumbs {
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 20px;
   }
-  
+
   .breadcrumbs a {
     color: #007bff;
     text-decoration: none;
   }
-  
+
   .breadcrumbs a:hover {
     text-decoration: underline;
   }
-  
+
   .breadcrumbs span {
     margin: 0 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-center h1 {
+    font-size: 18px;
+  }
+
+  .cart-icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .cart-count {
+    top: -3px;
+    right: -3px;
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  .order-button {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 }

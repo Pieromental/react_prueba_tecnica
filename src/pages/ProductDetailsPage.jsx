@@ -41,8 +41,8 @@ const ProductDetailsPage = () => {
     if (selectedColor && selectedStorage) {
       const productToAdd = {
         id: product.id,
-        colorCode: selectedColor,
-        storageCode: selectedStorage,
+        colorCode: selectedColor.toString(),
+        storageCode: selectedStorage.toString(),
       };
       addToCart(productToAdd);
     } else {
