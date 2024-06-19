@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useProductDetails from "../hooks/useProductDetails";
 import Spinner from "../components/Spinner";
 import { useCart } from "../hooks/useCart";
+import { useBreadCrumb } from "../hooks/useBreadCrumb";
 import "./ProductDetailsPage.css";
 
 const ProductDetailsPage = () => {
@@ -11,6 +12,7 @@ const ProductDetailsPage = () => {
   const { product, loading, error } = useProductDetails(id);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedStorage, setSelectedStorage] = useState(null);
+  const { updateBreadCrumb } = useBreadCrumb();
 
   useEffect(() => {
     if (product && product.options) {
@@ -22,7 +24,10 @@ const ProductDetailsPage = () => {
         setSelectedStorage(storages[0].code);
       }
     }
-  }, [product]);
+    if (product) {
+      updateBreadCrumb(product.model); // Actualizar el breadcrumb con el nombre del producto
+    }
+  }, [product, updateBreadCrumb]);
 
   const handleColorClick = (color) => {
     setSelectedColor(color);
@@ -88,8 +93,15 @@ const ProductDetailsPage = () => {
               <strong>Batería:</strong> {product.battery}
             </li>
             <li>
-              <strong>Cámaras:</strong> {Array.isArray(product.primaryCamera) ? product.primaryCamera.join(", ") : product.primaryCamera} (Primaria), 
-              {Array.isArray(product.secondaryCamera) ? product.secondaryCamera.join(", ") : product.secondaryCamera} (Secundaria)
+              <strong>Cámaras:</strong>{" "}
+              {Array.isArray(product.primaryCamera)
+                ? product.primaryCamera.join(", ")
+                : product.primaryCamera}{" "}
+              (Primaria),
+              {Array.isArray(product.secondaryCamera)
+                ? product.secondaryCamera.join(", ")
+                : product.secondaryCamera}{" "}
+              (Secundaria)
             </li>
             <li>
               <strong>Dimensiones:</strong> {product.dimentions}

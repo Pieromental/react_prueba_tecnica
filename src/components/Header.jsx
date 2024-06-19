@@ -1,32 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useCart } from "../hooks/useCart";
 import { Link, useLocation } from "react-router-dom";
+import { useBreadCrumb } from "../hooks//useBreadCrumb";
 import cartIcon from "../assets/icons/cart_icon.png";
 import "./Header.css";
 
 const Header = ({ cartCount, children }) => {
+  const { breadcrumb } = useBreadCrumb();
   const { cartLength } = useCart();
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
-  const [productName, setProductName] = useState("");
-
-  useEffect(() => {
-    const fetchProductName = async (id) => {
-      try {
-        const response = await fetch(
-          `https://itx-frontend-test.onrender.com/api/product/${id}`
-        );
-        const data = await response.json();
-        setProductName(data.model);
-      } catch (error) {
-        console.error("Error fetching product name:", error);
-      }
-    };
-
-    if (pathnames[0] === "product" && pathnames[1]) {
-      fetchProductName(pathnames[1]);
-    }
-  }, [pathnames]);
+  
 
   return (
     <>
@@ -43,15 +27,15 @@ const Header = ({ cartCount, children }) => {
           </div>
         </div>
         <div className="header-bottom">
-          <nav className="breadcrumbs">
-            <Link to="/">Home</Link>
-            {pathnames[0] === "product" && productName && (
-              <>
-                <span> / </span>
-                <span>{productName}</span>
-              </>
-            )}
-          </nav>
+        <nav className="breadcrumbs">
+          <Link to="/">Home</Link>
+          {pathnames.length === 2 && pathnames[0] === "product" && (
+            <>
+              <span> / </span>
+              <span>{breadcrumb}</span>
+            </>
+          )}
+        </nav>
         </div>
       </header>
       <main>{children}</main>
