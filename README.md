@@ -43,7 +43,8 @@ Sigue los siguientes pasos para instalar y ejecutar el proyecto localmente:
    ```npm run lint o yarn lint
     Ejecuta ESLint para encontrar y arreglar problemas en el código.
 
-4. **Estructura del Proyecto:**
+## Estructura del Proyecto:
+
     ├── public
     │   ├── index.html
     │   └── ...
@@ -70,18 +71,20 @@ Sigue los siguientes pasos para instalar y ejecutar el proyecto localmente:
     ├── package.json
     └── vite.config.js
 
+## Notas Adicionales:
 
-5. **Notas Adicionales:**
     Persistencia de Datos: La información del carrito se almacena en localStorage con una expiración de 1 hora.
     
     API: La aplicación se conecta a una API para obtener los detalles del producto y gestionar el carrito de compras.
     
     Responsividad: La aplicación es responsiva y se ajusta para verse correctamente en diferentes tamaños de pantalla.
     
-6. **Problemas Comunes:**
+
+## Problemas Comunes:
+
     Error al ejecutar npm run test: Asegúrate de tener instalados todos los paquetes necesarios, incluidos @testing-library/jest-dom.
     Problemas de CORS: Si encuentras problemas de CORS al hacer peticiones a la API, considera utilizar un proxy o configurar CORS en el servidor de la API.
 
-7. **Problemas Comunes:**
+## Contribuciones:
     Las contribuciones son bienvenidas. Por favor, abre un issue para discutir lo que te gustaría cambiar.
 
