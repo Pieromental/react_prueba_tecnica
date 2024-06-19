@@ -20,8 +20,14 @@ Sigue los siguientes pasos para instalar y ejecutar el proyecto localmente:
    cd react-prueba-tecnica
 
 2. **Instalar Dependencias:**
-    Usando npm: npm install
-    Usando yarn: yarn install
+
+ Usando npm:
+
+    ``` npm install
+    
+    Usando yarn.
+
+    ``` yarn install
 
 3. **Scripts Disponibles:**
     En el directorio del proyecto, puedes ejecutar:
