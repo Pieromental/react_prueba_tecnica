@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useProductDetails from "../hooks/useProductDetails";
+import Spinner from "../components/Spinner";
 import "./ProductDetailsPage.css";
 
 const ProductDetailsPage = () => {
@@ -29,7 +30,7 @@ const ProductDetailsPage = () => {
     setSelectedStorage(storage);
   };
   if (loading) {
-    return <p>Cargando detalles del producto...</p>;
+    return <Spinner message={"Cargando Producto"} />;
   }
 
   if (error) {

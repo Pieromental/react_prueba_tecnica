@@ -2,6 +2,8 @@ import useProducts from "../hooks/useProducts";
 
 import SearchBar from "../components/SearchBar";
 import ProductList from "../components/ProductList";
+import Spinner from "../components/Spinner";
+
 import useFilteredProducts from "../hooks/useFilteredProducts";
 import "./ProductListPage.css";
 
@@ -12,7 +14,7 @@ const ProductListPage = () => {
 
 
   if (loading) {
-    return <p>Cargando productos...</p>;
+    return <Spinner message={"Cargando Productos"} />;
   }
 
   if (error) {
