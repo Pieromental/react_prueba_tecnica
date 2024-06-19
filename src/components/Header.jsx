@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useCart } from "../hooks/useCart";
 import { Link, useLocation } from "react-router-dom";
 import cartIcon from "../assets/icons/cart_icon.png";
 import "./Header.css";
 
 const Header = ({ cartCount, children }) => {
+  const { cartLength } = useCart();
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
   const [productName, setProductName] = useState("");
@@ -36,7 +38,7 @@ const Header = ({ cartCount, children }) => {
           <div className="header-right">
             <div className="cart-icon-container">
               <img src={cartIcon} alt="Cart Icon" className="icon cart-icon" />
-              {cartCount > 0 && <div className="cart-count">{cartCount}</div>}
+              {cartCount > 0 && <div className="cart-count">{cartLength}</div>}
             </div>
           </div>
         </div>
