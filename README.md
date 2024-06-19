@@ -24,8 +24,8 @@ Sigue los siguientes pasos para instalar y ejecutar el proyecto localmente:
  Usando npm:
 
     ``` npm install
-    
-    Usando yarn.
+
+ Usando yarn:
 
     ``` yarn install
 
