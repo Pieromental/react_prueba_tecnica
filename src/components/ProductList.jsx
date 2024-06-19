@@ -9,8 +9,15 @@ const ProductList = ({ products }) => {
         <div key={product.id} className="product-item">
           <img src={product.imgUrl} alt={`${product.brand} ${product.model}`} />
           <h2>{product.brand} - {product.model}</h2>
-          <p>Price: ${product.price}</p>
-          <Link to={`/product/${product.id}`}>Ver Detalles</Link>
+          <p>Price: S/{product.price}</p>
+          <Link
+            to={{
+              pathname: `/product/${product.id}`,
+              state: { productName: product.model }
+            }}
+          >
+            Ver Detalles
+          </Link>
         </div>
       ))}
     </div>

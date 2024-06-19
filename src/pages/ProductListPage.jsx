@@ -1,4 +1,3 @@
-import { useState } from "react";
 import useProducts from "../hooks/useProducts";
 
 import SearchBar from "../components/SearchBar";

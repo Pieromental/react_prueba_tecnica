@@ -1,13 +1,24 @@
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   padding: 10px 20px;
   background-color: #DAE8FC;
   border-bottom: 1px solid #e0e0e0;
-  flex-wrap: wrap; 
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
 }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-bottom {
+  display: flex;
+  justify-content: center; 
+}
 
 .header-center,
 .header-right {
@@ -102,5 +113,25 @@
     right: -5px;
     padding: 4px 8px;
     font-size: 12px;
+  }
+ 
+  
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .breadcrumbs a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+  
+  .breadcrumbs span {
+    margin: 0 5px;
   }
 }
